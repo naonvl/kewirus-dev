@@ -1,0 +1,53 @@
+<form [formGroup]="newProjectForm" class="row show-grid">
+    <div class="col-lg-6 col-md-8 col-sm-10 offset-md-2 offset-lg-3 offset-sm-1" style="margin-bottom:40px;">
+        <h1 style="text-align: center;">Getting started</h1>
+        <div class="font-row">
+            <p style="text-align: center;font-size: 16px;">
+                Now that you've embarked on an entrepreneurial journey, fill in your startup's details, so that
+                we can configure the <b>Disciplined Entrepreneurship</b> Toolbox for your startup.
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 offset-md-2 offset-lg-3 offset-sm-1">
+        <nb-card style="padding: 20px;">
+            <nb-card-body>
+                <h5>Give your startup a name</h5>
+                <p style="margin: 20px 0px 15px 0px;">Don't worry, you can change it anytime.</p>
+                <input type="text" nbInput fullWidth fieldSize="large" placeholder="Large"
+                    formControlName="projectName">
+            </nb-card-body>
+        </nb-card>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 offset-md-2 offset-lg-3 offset-sm-1">
+        <nb-card style="padding: 20px;">
+            <nb-card-body>
+                <h5>What is the motivation to build this startup?</h5>
+                <p style="margin: 20px 0px 15px 0px;">To get started with this process, you just need an idea, a
+                    technology or an inspiration. But let’s be clear which one of these you are starting with and put a
+                    little more definition on "it".</p>
+                <nb-radio-group formControlName="selectedCategory">
+                    <nb-radio value="1">Option 1</nb-radio>
+                    <nb-radio value="2">Option 2</nb-radio>
+                    <nb-radio value="3">Option 3</nb-radio>
+                </nb-radio-group>
+            </nb-card-body>
+        </nb-card>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 offset-md-2 offset-lg-3 offset-sm-1">
+        <nb-card style="padding: 20px;">
+            <nb-card-body>
+                <h5>Is it an innovation-driven enterprise?</h5>
+                <p style="margin: 20px 0px 15px 0px;">Try to evaluate from the start which aspects are specific for your
+                    startup. This profile will help you realize whether your entrepreneurship model is
+                    innovation-driven, and thus appropriate for this framework and toolbox.</p>
+                <textarea nbInput fullWidth placeholder="Textarea" formControlName="projectDesc"></textarea>
+            </nb-card-body>
+        </nb-card>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 offset-md-2 offset-lg-3 offset-sm-1">
+        <div>
+            <button style="margin: 10px 0px 40px 0px;padding: 20px;" fullWidth nbButton shape="rectangle"
+                status="primary" (click)="saveProject()">Continue</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,212 @@
+<!-- <form [formGroup]="newProjectForm" class="row show-grid">
+  <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3" style="margin-bottom:40px;">
+    <h3 style="text-align: center;margin: 20px auto;">Step 1</h3>
+    <div class="font-row">
+      <p style="text-align: center;font-size: 16px;">
+        Now that you've embarked on an entrepreneurial journey, fill in your startup's details, so that
+        we can configure the <b>Disciplined Entrepreneurship</b> Toolbox for your startup.
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+    <nb-card>
+      <nb-card-body class="myIframe">
+        <iframe src="https://www.youtube.com/embed/gSfc4GhlZ44" frameborder="0" webkitallowfullscreen mozallowfullscreen
+          allowfullscreen></iframe>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+    <nb-card style="padding: 20px;">
+      <nb-card-body>
+        <p style="font-size:x-large;line-height: 2rem;">The single necessary and sufficient condition for a business is
+          a paying
+          customer. The process starts not by focusing on the idea, but on who will be the end user. Therefore, you will
+          focus on the customer and build the company from the endpoint, rather than trying to push out on the customer
+          what we think they need. This is the first in a series of steps which will help you define, test and
+          understand who your customer is.</p>
+        <p style="font-size:medium;">
+          In this first step, two things are critical:
+        </p>
+        <ul>
+          <li>
+            <p>
+              See the world through the eyes of your customer. Just because you want something, doesn't mean everybody
+              else does or that they want it in the same way. What you want is not important. Did you start your company
+              with the solution as the center of it—with customers rotating around it? Invert that. See the customer as
+              the hub and the solution rotating around them.
+            </p>
+          </li>
+        </ul>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+    <nb-card style="padding: 20px;">
+      <nb-card-body>
+        <h5>What is the motivation to build this startup?</h5>
+        <p style="margin: 20px 0px 15px 0px;">To get started with this process, you just need an idea, a
+          technology or an inspiration. But let’s be clear which one of these you are starting with and put a
+          little more definition on "it".</p>
+        <nb-radio-group formControlName="selectedCategory">
+          <nb-radio value="1">Option 1</nb-radio>
+          <nb-radio value="2">Option 2</nb-radio>
+          <nb-radio value="3">Option 3</nb-radio>
+        </nb-radio-group>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+    <nb-card style="padding: 20px;">
+      <nb-card-body>
+        <h5>Is it an innovation-driven enterprise?</h5>
+        <p style="margin: 20px 0px 15px 0px;">Try to evaluate from the start which aspects are specific for your
+          startup. This profile will help you realize whether your entrepreneurship model is
+          innovation-driven, and thus appropriate for this framework and toolbox.</p>
+        <textarea nbInput fullWidth placeholder="Textarea" formControlName="projectDesc"></textarea>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+    <div>
+      <button style="margin: 10px 0px 40px 0px;padding: 20px;" fullWidth nbButton shape="rectangle" status="primary"
+        (click)="saveProject()">Continue</button>
+    </div>
+  </div>
+</form> -->
+
+<div class="stepContainer">
+  <div style="margin-bottom:40px;">
+    <h2 style="text-align: center;margin: 20px auto;">Step 1</h2>
+    <div class="divider">
+    </div>
+    <div style="display: flex;flex-direction: row;">
+      <p style="margin: 40px auto 10px 0px;">
+        <a nbButton status="basic" style="margin-right: 10px;" size="small" (click)="back()">
+          <nb-icon icon="chevron-left-outline"></nb-icon>Back
+        </a>
+        <a nbButton style="margin-right: 10px;" size="small" status="success">
+          <nb-icon icon="save-outline"></nb-icon>Save
+        </a>
+      </p>
+      <p style="margin: 40px 0px 10px auto;">
+        <a nbTooltip="You have not subscribe yet" nbTooltipPlacement="top" nbButton disabled size="small">
+          <nb-icon icon="video-off-outline"></nb-icon>Materi
+        </a>
+      </p>
+    </div>
+    <div style="width: 100%;margin-top: 20px;">
+      <nb-card>
+        <nb-card-body class="myIframe">
+          <iframe src="https://www.youtube.com/embed/gSfc4GhlZ44" frameborder="0" webkitallowfullscreen
+            mozallowfullscreen allowfullscreen></iframe>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <!-- <form [formGroup]="stepsForm"> -->
+    <div>
+      <nb-card style="padding: 20px;">
+        <nb-card-body>
+          <p class="stepEmph">The single necessary and sufficient condition for a business
+            is
+            a paying
+            customer. The process starts not by focusing on the idea, but on who will be the end user. Therefore, you
+            will
+            focus on the customer and build the company from the endpoint, rather than trying to push out on the
+            customer
+            what we think they need. This is the first in a series of steps which will help you define, test and
+            understand who your customer is.</p>
+          <p style="font-size:medium;">
+            In this first step, two things are critical:
+          </p>
+          <ul>
+            <li>
+              <p>
+                <b>See the world through the eyes of your customer.</b> Just because you want something, doesn't mean
+                everybody
+                else does or that they want it in the same way. What you want is not important. Did you start your
+                company
+                with the solution as the center of it—with customers rotating around it? Invert that. See the customer
+                as
+                the hub and the solution rotating around them.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Open up your mind.</b> Brainstorm all potential customers. Who can use your idea or technology? Let a
+                thousand flowers bloom at this point—and stop and smell every one of them! Be careful to make distinct
+                market segments that are not so broad as to be meaningless. For instance, Market segment: consumers,
+                tells you absolutely nothing. But, Market segment: 24–30 year old male, who is online and makes over
+                $75K per year, lives in urban environment, tells you something very specific about your customer.
+              </p>
+            </li>
+          </ul>
+        </nb-card-body>
+      </nb-card>
+      <nb-card style="padding: 20px;">
+        <nb-card-body>
+          <h4>Single-Sided or Multi-Sided Market?</h4>
+          <p style="font-size:medium;line-height: 1.3rem;">
+            Do you serve only one type of “customer”, or will you serve multiple customers in order to create value?
+            Will your “end-user customer” be different from the “economic-buyer customer”, or do you need both a “buyer”
+            and a “seller”, like eBay, to make your idea work?. Don't confuse types with segments—a customer type has a
+            very specific need (e.g. hosting for their website), while a segment is a specific group of customers who
+            have that need (e.g. bloggers, SMEs etc.):
+          </p>
+          <nb-radio-group>
+            <nb-radio value="1"><b>Single-sided market</b> (only one type of customer)</nb-radio>
+            <nb-radio value="2"><b>Two-sided market</b> (two complementary types of customers)</nb-radio>
+            <nb-radio value="3"><b>Multi-sided market</b> (a more complex approach, involving three or more types of
+              customers)</nb-radio>
+          </nb-radio-group>
+        </nb-card-body>
+      </nb-card>
+      <nb-card style="padding: 20px;">
+        <nb-card-body>
+          <h4>Brainstorm Market Opportunities</h4>
+          <p style="font-size:medium;line-height: 1.3rem;">
+            Do primary market research by talking to at least 50 people about your idea and the problem it solves. Then
+            sit down with your team and list all possible customer types. Do you think you have a crazy idea and it
+            won't work? List it anyway, because it opens the aperture and expands the boundary conditions, and close to
+            these boundary conditions may be where some of the most interesting markets will be for you. Open the
+            windows and let as much sun and fresh air in as you possibly can.
+          </p>
+          <div>
+            <nb-checkbox style="display: inline-block;font-size:medium;line-height: 1.3rem;" status="basic">Get out of
+              the building and talk to people.</nb-checkbox>
+            <nb-checkbox style="display: inline-block;font-size:medium;line-height: 1.3rem;" status="basic">Brainstorm
+              with your team and list ideas about possible types of customers.</nb-checkbox>
+            <nb-checkbox style="display: inline-block;font-size:medium;line-height: 1.3rem;" status="basic">Segment
+              these customers based on industry, geographic location, income, user types, and other criteria.
+            </nb-checkbox>
+          </div>
+        </nb-card-body>
+      </nb-card>
+      <nb-card style="padding: 20px;">
+        <nb-card-body>
+          <h4>Market Segmentation Conclusion</h4>
+          <p style="font-size:medium;line-height: 1.3rem;margin-bottom: 20px;">
+            At this point you should have brainstormed a number of potential market segments for your idea without
+            choosing one;—the choosing will come later. <br><br>
+            In doing this exercise with your team, you will have started to get yourself and your team in the right
+            mindset—let's build this company with the customer at the forefront of our minds. You will also have started
+            the important process of doing primary market research. As you go forward, this will be a crucial skill
+            employed many times your team. Remember, you need to do market research in inquiry mode, not advocacy mode.
+            You are not yet selling. You are investigating and learning what should be done. Don’t jump the gun.
+          </p>
+          <textarea nbInput fullWidth placeholder="Textarea" style="height: 150px;"></textarea>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <p style="width: 100%; text-align: center;margin-top: 40px;">
+      <a nbButton status="basic" style="margin-right: 10px;" size="small" (click)="back()">
+        <nb-icon icon="chevron-left-outline"></nb-icon>Back
+      </a>
+      <a nbButton style="margin-right: 10px;" size="small" status="success" (click)="next()">
+        <nb-icon icon="save-outline"></nb-icon>Save
+      </a>
+      <a nbButton size="small">Next<nb-icon icon="chevron-right-outline"></nb-icon>
+      </a>
+    </p>
+  </div>
+</div>

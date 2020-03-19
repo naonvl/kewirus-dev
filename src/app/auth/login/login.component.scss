@@ -1,0 +1,21 @@
+.nb-theme-default nb-card-header {
+  display: none;
+}
+.form-control-group {
+  margin-bottom: 15px;
+}
+.form-control-group.accept-group {
+  margin: 15px 0px;
+}
+.links, .links .socials, .another-action{
+  margin-top: 15px;
+}
+.forgot-password{
+  margin-top: 0.5rem;
+}
+@media screen and (max-width: 500px) {
+  .loginCardContainer {
+    width: 100% !important;
+    height: 100vh !important;
+  }
+}

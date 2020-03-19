@@ -1,42 +1,6 @@
-<div class="row">
-  <div class="col-xxxl-3 col-md-6" *ngFor="let statusCard of statusCards">
-    <ngx-status-card [title]="statusCard.title" [type]="statusCard.type">
-      <i [ngClass]="statusCard.iconClass"></i>
-    </ngx-status-card>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-temperature></ngx-temperature>
-  </div>
-
-  <div class="col-xxxl-9 col-xxl-8 col-lg-7 col-md-6">
-    <ngx-electricity></ngx-electricity>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xxxl-9 col-xl-12">
-    <ngx-rooms></ngx-rooms>
-  </div>
-
-  <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
-    <ngx-contacts></ngx-contacts>
-  </div>
-
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-solar [chartValue]="solarValue"></ngx-solar>
-
-    <ngx-kitten></ngx-kitten>
-  </div>
-
-  <div class="col-xxxl-3 col-xxl-4 col-md-5">
-    <ngx-traffic></ngx-traffic>
-    <ngx-weather></ngx-weather>
-  </div>
-
-  <div class="col-xxxl-6 col-xxl-12 col-md-7">
-    <ngx-security-cameras></ngx-security-cameras>
-  </div>
+<div style="width: 100%;height: calc( 100vh - 190px );overflow: hidden;">
+  <nb-card style="width: 100%;height: calc( 100vh - 220px );display: flex;background-image: url('https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/5395754/600/400/m2/fpnw/wm0/construction-site-1-.jpg?1542619265&s=2944a95bed8b076b68b3075aa43c2be2');background-position: center;background-size: cover;backdrop-filter: opacity(20%);">
+    <nb-card-body style="text-align: center;position: relative; top: 33%;">
+    </nb-card-body>
+  </nb-card>
 </div>

@@ -1,94 +1,73 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
-
+import { Component, OnInit, TemplateRef, ViewChild, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService, NbWindowService } from '@nebular/theme';
 import { UserData } from '../../../@core/data/users';
-import { LayoutService } from '../../../@core/utils';
-import { map, takeUntil } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
+import { NB_WINDOW } from '@nebular/theme';
+import { AuthService } from '../../../auth/auth.service';
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit, OnDestroy {
-
+export class HeaderComponent implements OnInit {
+  @ViewChild('contentTemplate', { static: false }) contentTemplate: TemplateRef<any>;
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: any;
-
-  themes = [
-    {
-      value: 'default',
-      name: 'Light',
-    },
-    {
-      value: 'dark',
-      name: 'Dark',
-    },
-    {
-      value: 'cosmic',
-      name: 'Cosmic',
-    },
-    {
-      value: 'corporate',
-      name: 'Corporate',
-    },
-  ];
-
-  currentTheme = 'default';
-
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
-
+  userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
+  loggedIn: boolean;
+  rememberUser: any;
   constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private themeService: NbThemeService,
-              private userService: UserData,
-              private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
-  }
+    private menuService: NbMenuService,
+    private themeService: NbThemeService,
+    private userService: UserData,
+    private windowService: NbWindowService,
+    public auth: AuthService,
+    @Inject(NB_WINDOW) private window,
+    private router: Router,
+    private breakpointService: NbMediaBreakpointsService) {
 
+  }
+  openWindow() {
+    this.windowService.open(
+      this.contentTemplate,
+      { title: 'Free Member' },
+    );
+  }
+  signOut(): void {
+    this.auth.signOut();
+    this.router.navigateByUrl('/auth/login');
+  }
   ngOnInit() {
-    this.currentTheme = this.themeService.currentTheme;
-
-    this.userService.getUsers()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.nick);
-
-    const { xl } = this.breakpointService.getBreakpointsMap();
-    this.themeService.onMediaQueryChange()
+    this.toggleSidebar();
+    //logout
+    this.menuService.onItemClick()
       .pipe(
-        map(([, currentBreakpoint]) => currentBreakpoint.width < xl),
-        takeUntil(this.destroy$),
-      )
-      .subscribe((isLessThanXl: boolean) => this.userPictureOnly = isLessThanXl);
+        filter(({ tag }) => tag === 'my-context-menu'), map(({ item: { title } }) => title)).subscribe(title => {
+          if (title == "Log out") {
+            this.signOut();
+          }
+        });
+    //logout
 
-    this.themeService.onThemeChange()
-      .pipe(
-        map(({ name }) => name),
-        takeUntil(this.destroy$),
-      )
-      .subscribe(themeName => this.currentTheme = themeName);
-  }
-
-  ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
-  changeTheme(themeName: string) {
-    this.themeService.changeTheme(themeName);
+    this.user = this.auth.user$;
+    this.rememberUser = localStorage.getItem('user');
+    console.log(this.rememberUser);
+    
   }
 
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
-    this.layoutService.changeLayoutSize();
-
     return false;
   }
 
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+  openChat() {
+    this.router.navigateByUrl('/pages/chat');
   }
 }

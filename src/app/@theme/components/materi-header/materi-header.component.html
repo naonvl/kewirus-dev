@@ -1,0 +1,24 @@
+<div class="header-container">
+  <div class="logo-container">
+    <nb-action nbButton status="basic" ghost (click)="routes.back()" style="cursor: pointer;">
+      <nb-icon style="width: 2rem;height: 2rem;" icon="chevron-left-outline"></nb-icon>Back
+    </nb-action>
+  </div>
+</div>
+<ng-template #contentTemplate>
+  <p>Please choose your subscribe pakcage for premium access!</p>
+</ng-template>
+<div class="header-container" *nbIsGranted="['view', 'user']">
+  <nb-actions size="small">
+    <nb-action class="control-item">
+      <nb-search type="modal-zoomin" tag="modal-zoomin"></nb-search>
+    </nb-action>
+    <nb-action class="control-item" icon="home-outline" ></nb-action>
+    <nb-action class="control-item" icon="bell-outline"></nb-action>
+    <nb-action class="user-action" *ngIf="user | async as user">
+      <nb-user [nbContextMenu]="userMenu" [onlyPicture]="userPictureOnly" [name]="user?.displayName"
+        [picture]="user?.photoURL" nbContextMenuTag="my-context-menu">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>

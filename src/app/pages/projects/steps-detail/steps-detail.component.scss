@@ -1,0 +1,72 @@
+@import "../../../@theme/styles/themes";
+
+@include nb-install-component() {
+  .buttons-row {
+    margin: -0.5rem;
+  }
+
+  button[nbButton] {
+    margin: 0.5rem;
+  }
+
+  .action-icon {
+    @include nb-ltr(margin-right, 0.5rem);
+    @include nb-rtl(margin-left, 0.5rem);
+  }
+
+  .actions-card {
+    height: 8rem;
+  }
+}
+
+.nb-theme-default [nbButton].appearance-filled.size-medium {
+  margin: 0px;
+}
+
+.myIframe {
+  position: relative;
+  padding-bottom: 50.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; //<<--- THIS IS THE KEY
+}
+.myIframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.stepContainer {
+  width: 800px;
+  margin: auto;
+}
+.stepEmph {
+  font-size: x-large;
+  line-height: 2rem;
+}
+.divider{
+    height: 5px;
+    width: 60px;
+    background-color: #3366ff;
+    border-radius: 5px;
+    margin: auto;
+}
+@media screen and (max-width: 900px) {
+  .stepContainer {
+    width: 100%;
+    margin: auto;
+  }
+  .stepEmph {
+    font-size: larger;
+    line-height: 1.7rem;
+  }
+}
+@media screen and (max-width: 425px) {
+    .stepEmph {
+      font-size: medium;
+      line-height: 1.5rem;
+    }
+  }

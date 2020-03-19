@@ -1,0 +1,32 @@
+<div style="background-color: grey;padding: 50px 0px;margin-top: 10px;">
+  <div class="materiContainer">
+    <div class="row">
+      <div class="col-12">
+        <h3>Video Title</h3>
+        <p>Erin Boyle, Minimalism & Writing</p>
+      </div>
+      <div class="col-9">
+        <div style="width: 100%;">
+          <nb-card>
+            <nb-card-body class="myIframe">
+              <iframe src="https://www.youtube.com/embed/gSfc4GhlZ44" frameborder="0" webkitallowfullscreen
+                mozallowfullscreen allowfullscreen></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      </div>
+      <div class="col-3" style="height: 100%;">
+        <nb-card>
+          <nb-card-header>
+            List Materi
+          </nb-card-header>
+          <nb-list class="listMateri">
+            <nb-list-item *ngFor="let user of users" style="cursor: pointer;" (click)="onClick()">
+              <nb-icon icon="video-outline" style="margin-right: 20px;"></nb-icon>{{ user.name }}
+            </nb-list-item>
+          </nb-list>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+</div>

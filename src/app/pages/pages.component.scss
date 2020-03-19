@@ -3,7 +3,7 @@
 @include nb-install-component() {
   ::ng-deep router-outlet + * {
     display: block;
-    animation: fade 1s;
+    animation: fade 2s;
 
     @keyframes fade {
       from {
@@ -15,4 +15,7 @@
       }
     }
   }
+}
+.layout-container{
+  margin-top: -3.75rem !important;
 }

@@ -21,6 +21,7 @@ import {
   HeaderComponent,
   SearchInputComponent,
   TinyMCEComponent,
+  MateriHeaderComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -55,6 +56,7 @@ const NB_MODULES = [
 ];
 const COMPONENTS = [
   HeaderComponent,
+  MateriHeaderComponent,
   FooterComponent,
   SearchInputComponent,
   TinyMCEComponent,
@@ -84,7 +86,7 @@ export class ThemeModule {
           {
             name: 'default',
           },
-          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
+          [DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME],
         ).providers,
       ],
     };

@@ -1,0 +1,115 @@
+<div class="row show-grid">
+  <div class="col-lg-4 offset-lg-4" *ngIf="projects">
+    <nb-card>
+      <nb-card-header>
+        {{ projects.projectName }}
+      </nb-card-header>
+      <nb-card-body>
+        {{ projects.projectDesc }}
+      </nb-card-body>
+    </nb-card>
+    <button nbButton (click)="deleteData()">Delete</button>
+  </div>
+</div>
+
+<div class="row show-grid">
+  <div class="col-lg-12" style="margin: 20px 0px 50px 0px;">
+    <h3>Your Projects</h3>
+  </div>
+  <div class="col-lg-12" style="display: flex;flex-direction: row;flex-wrap: wrap;">
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/new-project">
+      <nb-card-body style="margin-top: 55px;">
+        <nb-icon class="projectIcon" icon="plus-square-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6>Buat Projek</h6>
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row show-grid">
+  <div class="col-lg-12" style="margin: 20px 0px 50px 0px;">
+    <h3>Shared Projects</h3>
+  </div>
+  <div class="col-lg-12" style="display: flex;flex-direction: row;flex-wrap: wrap;">
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="text-align: center;width: 288px;height:250px;padding: 10px;margin-right: 30px;cursor: pointer;"
+      routerLink="/pages/projects/project-detail">
+      <nb-card-header>
+        <nb-icon class="projectIcon" icon="behance-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon>
+        <h6 style="margin-top: 10px;">Projek 1</h6>
+      </nb-card-header>
+      <nb-card-body>
+        Deskripsi Projek, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

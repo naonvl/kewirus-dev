@@ -31,3 +31,21 @@
 
   @include nb-overrides();
 };
+.nb-theme-default nb-layout-header nav{
+  height: 3.75rem;
+}
+.nb-theme-default nb-layout .layout .layout-container nb-sidebar.fixed, .nb-theme-default nb-layout .layout .layout-container nb-sidebar .main-container-fixed{
+  top: 3.75rem;
+}
+.layout-container{
+  margin-top: -3.75rem !important;
+}
+.layout-container .content{
+  margin-top: 3rem !important;
+}
+
+@media screen and (max-width: 425px) {
+  .nb-theme-default nb-user.size-medium .user-name{
+    display: none;
+  }
+}

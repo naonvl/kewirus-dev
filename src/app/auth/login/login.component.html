@@ -1,0 +1,51 @@
+<nb-card class="loginCardContainer" style="padding: 20px;width: 400px;margin: auto;">
+  <nb-card-header>
+    <h1 id="title" class="title">Login</h1>
+  </nb-card-header>
+  <div *ngIf="auth.user$ | async as user">
+    <nb-alert status="success">
+      {{ user | json }}
+    </nb-alert>
+  </div>
+
+  <ng-template #login>
+    <nb-alert status="success">
+      You are not log in
+    </nb-alert>
+  </ng-template>
+
+  <nb-card-body>
+    <form [formGroup]="loginForm" aria-labelledby="title" style="width: 100% !important;">
+      <div class="form-control-group" style="width: 100% !important;">
+        <label class="label" for="input-email">Email address:</label>
+        <input formControlName="email" nbInput fullWidth name="email" id="input-email" pattern=".+@.+\..+" placeholder="Email address"
+          autofocus>
+      </div>
+      <div class="form-control-group">
+        <label class="label" for="input-password">Password:</label>
+        <input formControlName="password" nbInput fullWidth name="password" type="password" id="input-password" placeholder="Password"
+          autocomplete="on">
+      </div>
+
+      <div class="form-control-group accept-group">
+        <nb-checkbox (checkedChange)="remember($event)" name="rememberMe">Remember me</nb-checkbox>
+        <a class="forgot-password" routerLink="../request-password">Forgot Password?</a>
+      </div>
+      <button (click)="loginWemail()" nbButton fullWidth status="success">
+        Login In
+      </button>
+    </form>
+
+    <section class="links" aria-label="Social sign in" style="width: 100%;">
+      Or login with:
+      <div class="socials">
+        <button style="width: 100%;" nbButton status="primary" (click)="googleLogin()">
+          <nb-icon icon="google-outline"></nb-icon>Google
+        </button>
+      </div>
+    </section>
+    <section class="another-action" aria-label="Register">
+      Don't have an account? <a class="text-link" routerLink="../register">Register</a>
+    </section>
+  </nb-card-body>
+</nb-card>
